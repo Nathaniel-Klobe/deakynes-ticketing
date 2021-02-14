@@ -17,5 +17,7 @@ namespace Deakynes.DataAccess.Data
         void Create(Ticket ticket);
 
         void Update(Ticket ticket);
+
+        void Delete(Ticket ticket);
     }
 }

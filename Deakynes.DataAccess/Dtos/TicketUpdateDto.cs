@@ -20,7 +20,7 @@ namespace Deakynes.DataAccess.Dtos
         public string Details { get; set; }
 
         [Required]
-        public string CreatedDate { get; }
+        public string CreatedDate { get; set; }
 
         public string PromisedDate { get; set; }
 

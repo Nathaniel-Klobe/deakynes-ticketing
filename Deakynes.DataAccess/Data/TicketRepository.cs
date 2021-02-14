@@ -25,6 +25,16 @@ namespace Deakynes.DataAccess.Data
             _context.Tickets.Add(ticket);
         }
 
+        public void Delete(Ticket ticket)
+        {
+            if (ticket == null)
+            {
+                throw new ArgumentNullException(nameof(ticket));
+            }
+
+            _context.Tickets.Remove(ticket);
+        }
+
         public IEnumerable<Ticket> GetAll()
         {
             return _context.Tickets.ToList<Ticket>();

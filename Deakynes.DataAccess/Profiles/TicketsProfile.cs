@@ -12,11 +12,13 @@ namespace Deakynes.DataAccess.Profiles
     {
         public TicketsProfile()
         {
-            //Source -> Target
             CreateMap<Ticket, TicketReadDto>();
 
-            //Target -> Source
             CreateMap<TicketCreateDto, Ticket>();
+
+            CreateMap<TicketUpdateDto, Ticket>();
+
+            CreateMap<Ticket, TicketUpdateDto>();
         }
     }
 }
