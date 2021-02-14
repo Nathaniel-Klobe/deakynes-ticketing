@@ -8,8 +8,16 @@ namespace Deakynes.DataAccess.Data
 {
     public interface IEmployeeRepository
     {
+        bool SaveChanges();
+
         IEnumerable<Employee> GetAll();
 
         Employee GetEmployee(int id);
+
+        void Create(Employee employee);
+
+        void Update(Employee employee);
+
+        void Delete(Employee employee);
     }
 }

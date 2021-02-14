@@ -8,8 +8,16 @@ namespace Deakynes.DataAccess.Data
 {
     public interface ICustomerRepository
     {
+        bool SaveChanges();
+
         IEnumerable<Customer> GetAll();
 
         Customer GetCustomer(int id);
+
+        void Create(Customer customer);
+
+        void Update(Customer customer);
+
+        void Delete(Customer customer);
     }
 }

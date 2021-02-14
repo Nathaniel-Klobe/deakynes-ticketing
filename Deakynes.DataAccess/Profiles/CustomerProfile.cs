@@ -13,6 +13,12 @@ namespace Deakynes.DataAccess.Profiles
         public CustomerProfile()
         {
             CreateMap<Customer, CustomerReadDto>();
+
+            CreateMap<CustomerCreateDto, Customer>();
+
+            CreateMap<CustomerUpdateDto, Customer>();
+
+            CreateMap<Customer, CustomerUpdateDto>();
         }
     }
 }

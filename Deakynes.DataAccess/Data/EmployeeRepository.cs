@@ -15,6 +15,26 @@ namespace Deakynes.DataAccess.Data
             _context = context;
         }
 
+        public void Create(Employee employee)
+        {
+            if (employee == null)
+            {
+                throw new ArgumentNullException(nameof(employee));
+            }
+
+            _context.Employees.Add(employee);
+        }
+
+        public void Delete(Employee employee)
+        {
+            if (employee == null)
+            {
+                throw new ArgumentNullException(nameof(employee));
+            }
+
+            _context.Employees.Remove(employee);
+        }
+
         public IEnumerable<Employee> GetAll()
         {
             return _context.Employees.ToList<Employee>();
@@ -24,6 +44,17 @@ namespace Deakynes.DataAccess.Data
         {
             return _context.Employees.FirstOrDefault<Employee>(p => p.EmployeeId == id);
         }
+
+        public bool SaveChanges()
+        {
+            return (_context.SaveChanges()) >= 0;
+        }
+
+        public void Update(Employee employee)
+        {
+            //Nothing
+        }
+
     }
 }
 
